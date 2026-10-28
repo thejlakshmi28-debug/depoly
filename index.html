@@ -1,397 +1,104 @@
-
+i
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ColorWave - Creative Website</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: white;
-      background: #101025;
-      line-height: 1.6;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 8%;
-      background: rgba(16, 16, 37, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-    }
-
-    .logo {
-      font-size: 27px;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff4d9d, #a855f7);
-      color: transparent;
-      background-clip: text;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #dddaf5;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff4d9d;
-    }
-
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        radial-gradient(ellipse at 20% 20%,
-          #6926a955, transparent 40%),
-        radial-gradient(ellipse at 80% 70%,
-          #ff4d9d33, transparent 40%);
-    }
-
-    .tag {
-      color: #ffc1e0;
-      background: #ff4d9d20;
-      border: 1px solid #ff4d9d66;
-      padding: 8px 18px;
-      border-radius: 30px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1.12;
-      max-width: 850px;
-      margin-bottom: 25px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(
-        90deg, #ff4d9d, #a855f7, #38d9ff
-      );
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      animation: colors 5s linear infinite;
-    }
-
-    @keyframes colors {
-      to { background-position: 200% center; }
-    }
-
-    .hero p {
-      color: #c4c2dd;
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px #a855f755;
-    }
-
-    .primary {
-      background: linear-gradient(90deg, #ff4d9d, #8b5cf6);
-      color: white;
-    }
-
-    .secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #77749b;
-    }
-
-    section {
-      padding: 80px 8%;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 4vw, 44px);
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      color: #b8b6d3;
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      padding: 28px 22px;
-      border-radius: 20px;
-      background: #1b1b38;
-      border: 1px solid #ffffff12;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #a855f7;
-    }
-
-    .card-icon {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .pink { background: #ff4d9d30; }
-    .purple { background: #a855f730; }
-    .blue { background: #38d9ff30; }
-    .orange { background: #ffad4230; }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #b8b6d3;
-      font-size: 14px;
-    }
-
-    .about {
-      text-align: center;
-      background: linear-gradient(135deg, #241443, #15152f);
-      border-radius: 30px;
-      padding: 55px 25px;
-    }
-
-    .about p {
-      max-width: 650px;
-      margin: 20px auto 30px;
-      color: #c4c2dd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #ffffff15;
-      color: #aaa8c8;
-    }
-
-    @media (max-width: 900px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 18px 5%;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .logo {
-        font-size: 23px;
-      }
-
-      nav {
-        gap: 14px;
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 75vh;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 60px 6%;
-      }
-    }
-  </style>
+  <title>ShopEasy - Online Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
 
   <header>
-    <div class="logo">ColorWave ✨</div>
+    <div class="logo">ShopEasy 🛍️</div>
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#footer">Contact</a>
+      <div class="cart">
+        🛒 Cart: <span id="cart-count">0</span>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="tag">✦ Welcome to creativity</div>
+  <section class="hero" id="home">
+    <h1>Find Your Favorite Products</h1>
+    <p>Discover great products at prices you'll love.</p>
+    <a href="#products" class="shop-btn">Shop Now →</a>
+  </section>
 
-      <h1>
-        Make Your Ideas
-        <span class="gradient-text">Shine Bright.</span>
-      </h1>
+  <section class="products" id="products">
+    <h2>Our Products</h2>
 
-      <p>
-        Discover a colorful digital experience with beautiful
-        designs, modern layouts, and endless possibilities.
-      </p>
+    <div class="product-grid">
 
-      <div class="buttons">
-        <a class="btn primary" href="#features">
-          Explore Now →
-        </a>
-
-        <button class="btn secondary" id="colorBtn">
-          Change Colors 🎨
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+          alt="Wireless headphones"
+        >
+        <h3>Headphones</h3>
+        <p class="price">₹1,499</p>
+        <button class="add-btn"
+          data-name="Headphones" data-price="1499">
+          Add to Cart
         </button>
       </div>
-    </section>
 
-    <section id="features">
-      <h2 class="section-title">
-        What Makes Us <span class="gradient-text">Special?</span>
-      </h2>
-
-      <p class="section-desc">
-        Everything you need for a beautiful web experience.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon pink">🎨</div>
-          <h3>Creative Design</h3>
-          <p>Eye-catching colors and stylish layouts that stand out.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon purple">⚡</div>
-          <h3>Fast & Modern</h3>
-          <p>Clean code and smooth animations for a better experience.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon blue">📱</div>
-          <h3>Responsive</h3>
-          <p>Looks great on mobile phones, tablets, and computers.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon orange">💖</div>
-          <h3>Made with Love</h3>
-          <p>Carefully designed details to make every visit special.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about">
-        <h2 class="section-title">
-          Ready to Create Something <span class="gradient-text">Amazing?</span>
-        </h2>
-
-        <p>
-          Turn your imagination into reality.
-          Start exploring, experiment with colors,
-          and build something uniquely yours.
-        </p>
-
-        <button class="btn primary" id="helloBtn">
-          Say Hello 👋
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+          alt="Stylish wristwatch"
+        >
+        <h3>Wristwatch</h3>
+        <p class="price">₹999</p>
+        <button class="add-btn"
+          data-name="Wristwatch" data-price="999">
+          Add to Cart
         </button>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>© <span id="year"></span> ColorWave. Made with ❤️ and creativity.</p>
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+          alt="Red sports shoes"
+        >
+        <h3>Sports Shoes</h3>
+        <p class="price">₹1,999</p>
+        <button class="add-btn"
+          data-name="Sports Shoes" data-price="1999">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="product">
+        <img
+          src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500"
+          alt="Digital camera"
+        >
+        <h3>Camera</h3>
+        <p class="price">₹4,999</p>
+        <button class="add-btn"
+          data-name="Camera" data-price="4999">
+          Add to Cart
+        </button>
+      </div>
+
+    </div>
+
+    <div class="cart-message" id="message" aria-live="polite"></div>
+
+    <div class="cart-total">
+      Total: ₹<span id="cart-total">0</span>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p>© 2026 ShopEasy. All rights reserved.</p>
+    <p>Contact: support@shopeasy.example</p>
   </footer>
-
-  <script>
-    const themes = [
-      ["#ff4d9d", "#8b5cf6", "#38d9ff"],
-      ["#00c9a7", "#007cf0", "#a8ff78"],
-      ["#ff8a00", "#e52e71", "#ffd166"],
-      ["#7c3aed", "#db2777", "#fb7185"]
-    ];
-
-    let themeIndex = 0;
-
-    document.getElementById("colorBtn").addEventListener("click", () => {
-      themeIndex = (themeIndex + 1) % themes.length;
-
-      const [pink, purple, blue] = themes[themeIndex];
-
-      document.querySelector(".gradient-text").style.backgroundImage =
-        `linear-gradient(90deg, ${pink}, ${purple}, ${blue})`;
-
-      document.querySelector(".primary").style.backgroundImage =
-        `linear-gradient(90deg, ${pink}, ${purple})`;
-
-      document.querySelector(".tag").style.color = pink;
-
-      document.querySelectorAll(".card").forEach((card, i) => {
-        card.style.borderColor = themes[themeIndex][i % 3];
-      });
-    });
-
-    document.getElementById("helloBtn").addEventListener("click", () => {
-      alert("Hello! 👋 Thanks for visiting ColorWave!");
-    });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
 </html>
