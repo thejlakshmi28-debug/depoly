@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                 '''
 
-                stash name: 'webpage', includes: 'deploy/**'
+                stash name: 'webpage', includes: 'depoly/**'
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
 
                 sh '''
                     rm -rf /var/www/html/*
-                    cp -r deploy/* /var/www/html/
+                    cp -r depoly/* /var/www/html/
                     ls -la /var/www/html/
                 '''
             }
