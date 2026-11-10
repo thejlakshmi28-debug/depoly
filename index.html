@@ -1,105 +1,182 @@
-i
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ShopEasy - Online Store</title>
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
+  <!-- Header -->
   <header>
-    <div class="logo">ShopEasy 🛍️</div>
+
+    <div class="logo">
+      ShopEasy 🛍️
+    </div>
 
     <nav>
       <a href="#home">Home</a>
       <a href="#products">Products</a>
       <a href="#footer">Contact</a>
+
       <div class="cart">
-        🛒 Cart: <span id="cart-count">0</span>
+        🛒 Cart:
+        <span id="cart-count">0</span>
       </div>
     </nav>
+
   </header>
 
+
+  <!-- Hero Section -->
   <section class="hero" id="home">
+
     <h1>Find Your Favorite Products</h1>
-    <p>Discover great products at prices you'll love.</p>
-    <a href="#products" class="shop-btn">Shop Now →</a>
+
+    <p>
+      Discover great products at prices you'll love.
+    </p>
+
+    <a href="#products" class="shop-btn">
+      Shop Now →
+    </a>
+
   </section>
 
+
+  <!-- Products Section -->
   <section class="products" id="products">
+
     <h2>Our Products</h2>
 
     <div class="product-grid">
 
+
+      <!-- Product 1 -->
       <div class="product">
+
         <img
           src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
           alt="Wireless headphones"
         >
+
         <h3>Headphones</h3>
+
         <p class="price">₹1,499</p>
-        <button class="add-btn"
-          data-name="Headphones" data-price="1499">
+
+        <button
+          class="add-btn"
+          data-name="Headphones"
+          data-price="1499">
           Add to Cart
         </button>
+
       </div>
 
+
+      <!-- Product 2 -->
       <div class="product">
+
         <img
           src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
           alt="Stylish wristwatch"
         >
+
         <h3>Wristwatch</h3>
+
         <p class="price">₹999</p>
-        <button class="add-btn"
-          data-name="Wristwatch" data-price="999">
+
+        <button
+          class="add-btn"
+          data-name="Wristwatch"
+          data-price="999">
           Add to Cart
         </button>
+
       </div>
 
+
+      <!-- Product 3 -->
       <div class="product">
+
         <img
           src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
           alt="Red sports shoes"
         >
+
         <h3>Sports Shoes</h3>
+
         <p class="price">₹1,999</p>
-        <button class="add-btn"
-          data-name="Sports Shoes" data-price="1999">
+
+        <button
+          class="add-btn"
+          data-name="Sports Shoes"
+          data-price="1999">
           Add to Cart
         </button>
+
       </div>
 
+
+      <!-- Product 4 -->
       <div class="product">
+
         <img
           src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500"
           alt="Digital camera"
         >
+
         <h3>Camera</h3>
+
         <p class="price">₹4,999</p>
-        <button class="add-btn"
-          data-name="Camera" data-price="4999">
+
+        <button
+          class="add-btn"
+          data-name="Camera"
+          data-price="4999">
           Add to Cart
         </button>
+
       </div>
 
     </div>
 
-    <div class="cart-message" id="message" aria-live="polite"></div>
 
+    <!-- Cart Message -->
+    <div
+      class="cart-message"
+      id="message"
+      aria-live="polite">
+    </div>
+
+
+    <!-- Cart Total -->
     <div class="cart-total">
       Total: ₹<span id="cart-total">0</span>
     </div>
+
   </section>
 
+
+  <!-- Footer -->
   <footer id="footer">
-    <p>© 2026 ShopEasy. All rights reserved.</p>
-    <p>Contact: support@shopeasy.example</p>
+
+    <p>
+      © 2026 ShopEasy. All rights reserved.
+    </p>
+
+    <p>
+      Contact: support@shopeasy.example
+    </p>
+
   </footer>
 
 </body>
 </html>
-
+```
