@@ -14,7 +14,7 @@ pipeline {
                     ls -la
                 '''
 
-                stash name: 'webpage', includes: 'portfolio-test/**'
+                stash name: 'webpage', includes: 'deploy/**'
             }
         }
 
